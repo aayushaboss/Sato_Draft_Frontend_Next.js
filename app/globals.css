@@ -138,7 +138,7 @@ a:hover { color: var(--red); }
 .hero-jp {
   position: absolute; top: var(--gutter); right: var(--gutter);
   font-family: var(--font-jp); font-size: 15px; letter-spacing: 0.5em;
-  writing-mode: vertical-rl; color: var(--white);
+  writing-mode: vertical-rl; white-space: nowrap; color: var(--white);
 }
 .overlay { position: relative; left: 0; right: 0; bottom: 0; }
 .hero-copy { padding: clamp(24px, 4vw, 56px) var(--gutter) clamp(40px, 5vw, 72px); max-width: 1560px; }
@@ -382,3 +382,28 @@ a:hover { color: var(--red); }
   padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 12px; letter-spacing: 0.08em; color: var(--paper);
 }
+
+/* ---------- Devices preview (/devices) ---------- */
+.devices { height: 100svh; display: flex; flex-direction: column; background: var(--paper); }
+.devices-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding: 16px 24px; border-bottom: 1px solid rgba(27, 27, 27, 0.1);
+}
+.devices-title { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; }
+.devices-tabs { display: flex; gap: 4px; padding: 4px; background: var(--white); border-radius: 999px; }
+.devices-tabs button {
+  border: 0; cursor: pointer; background: transparent; color: var(--ink);
+  font: inherit; font-size: 13px; padding: 8px 16px; border-radius: 999px;
+}
+.devices-tabs button:hover { color: var(--red); }
+.devices-tabs button.on { background: var(--ink); color: var(--white); }
+.devices-open { font-size: 13px; color: var(--red); }
+.devices-open:hover { color: var(--ink); }
+.devices-stage { flex: 1; min-height: 0; margin: 32px 24px; display: flex; align-items: center; justify-content: center; }
+.devices-row { display: flex; align-items: flex-start; width: max-content; transform-origin: 0 0; }
+.device { display: flex; flex-direction: column; gap: 16px; }
+.device[hidden] { display: none; }
+.device-label { font-size: 13px; line-height: 16px; letter-spacing: 0.2em; }
+.device-frame { background: var(--ink); box-shadow: 0 30px 60px rgba(27, 27, 27, 0.2); overflow: hidden; }
+.device-frame.desktop { background: var(--white); }
+.device-frame iframe { display: block; border: 0; background: var(--white); }
