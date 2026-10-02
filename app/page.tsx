@@ -134,14 +134,14 @@ export default function Home() {
               </h2>
             </div>
             <p data-r="" className="body">
-              Five SATOs across the city. Same bowls, same warmth, every time.
+              Five SATOs across Ahmedabad and Gandhinagar. Same bowls, same warmth, every time.
             </p>
           </div>
           <div className="outlet-grid">
-            {outlets.map((o) => (
-              <div key={o.n} data-r="" className="outlet">
-                <Placeholder label="storefront">
-                  <span className="outlet-tag">{o.n}</span>
+            {outlets.map((o, i) => (
+              <div key={o.name} data-r="" className="outlet">
+                <Placeholder label={o.alt ?? "storefront"} src={o.img} sizes="(min-width: 1200px) 280px, (min-width: 700px) 33vw, 100vw">
+                  <span className="outlet-tag">OUTLET 0{i + 1}</span>
                 </Placeholder>
                 <div className="outlet-body">
                   <span className="outlet-name">{o.name}</span>

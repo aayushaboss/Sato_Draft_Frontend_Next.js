@@ -24,11 +24,36 @@ export const dishCards = [
   { name: "Butter Garlic Tteokbokki", jp: "トッポッキ", img: "/menu/butter-garlic-tteokbokki.webp", alt: "Creamy butter garlic tteokbokki topped with spring onion and sesame" },
 ];
 
-export const outlets = [1, 2, 3, 4, 5].map((i) => ({
-  n: `OUTLET 0${i}`,
-  name: `SATO [Area ${i}]`,
-  addr: "[Street address], [City]",
-}));
+type Outlet = { name: string; addr: string; img?: string; alt?: string };
+
+// Street addresses and phone numbers still to come from SATO; the fifth outlet's photo is pending.
+export const outlets: Outlet[] = [
+  {
+    name: "SATO Vijay Char Rasta",
+    addr: "[Street address], Ahmedabad",
+    img: "/outlets/vijay-char-rasta.webp",
+    alt: "Red-walled SATO Vijay Char Rasta with a bar counter, orange stools and a neon Sato Ramen sign",
+  },
+  {
+    name: "SATO Gota",
+    addr: "[Street address], Ahmedabad",
+    img: "/outlets/gota.webp",
+    alt: "Glass-fronted SATO Gota with red booth seating, red chairs and a neon Sato Ramen sign",
+  },
+  {
+    name: "SATO Naroda",
+    addr: "[Street address], Ahmedabad",
+    img: "/outlets/naroda.webp",
+    alt: "Bright SATO Naroda dining room with red chairs, framed art and a ラーメン banner",
+  },
+  {
+    name: "SATO Gandhinagar",
+    addr: "[Street address], Gandhinagar",
+    img: "/outlets/gandhinagar.webp",
+    alt: "Cosy corner at SATO Gandhinagar with manga shelves, an anime pirate flag and a low bench table",
+  },
+  { name: "SATO [Area 5]", addr: "[Street address], [City]" },
+];
 
 export const perks = [
   { jp: "秘", k: "Secret menu", v: "Taste bowls that never make the menu." },
