@@ -221,13 +221,22 @@ export default function Home() {
             </a>
           </div>
           {reels.map((r) => (
-            <a key={r.img} data-r="" href={instagramUrl} target="_blank" rel="noreferrer" className="reel">
+            <a
+              key={r.url}
+              data-r=""
+              href={r.url}
+              target="_blank"
+              rel="noreferrer"
+              className="reel"
+              aria-label={`Watch @${r.creator}'s reel on Instagram (${r.views} views)`}
+            >
               <div className="reel-head">
+                <span className="reel-views">{r.views} views</span>
                 <span className="reel-handle">
                   <span>
                     <Image src="/assets/logo-mark.png" alt="" width={14} height={14} />
                   </span>
-                  sato_ramenbowl
+                  @{r.creator}
                 </span>
               </div>
               <Placeholder label={r.img}>

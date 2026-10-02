@@ -372,8 +372,9 @@ a:hover { color: var(--red); }
 .reel { display: flex; flex-direction: column; background: var(--paper); border-radius: 16px; overflow: hidden; }
 .reel.is-in { transition: transform 0.5s var(--ease), opacity 1s var(--ease); }
 .reel:hover { transform: translateY(-6px); color: var(--ink); }
-.reel-head { display: flex; justify-content: flex-end; padding: 12px 14px; }
-.reel-handle { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.reel-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 14px; }
+.reel-views { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--red); white-space: nowrap; }
+.reel-handle { display: flex; align-items: center; gap: 6px; font-size: 12px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .reel-handle span { flex: none; width: 20px; height: 20px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; }
 .reel-handle img { width: 14px; height: 14px; display: block; }
 .reel .par { aspect-ratio: 4 / 5; }

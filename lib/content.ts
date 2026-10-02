@@ -40,10 +40,29 @@ export const perks = [
   { jp: "仲", k: "Find your people", v: "Anime fans, spice lovers, late-night slurpers." },
 ];
 
+// Top reels on @sato_ramenbowl by views (checked 2 Oct 2026). Each card links to the reel on Instagram.
 export const reels = [
-  { img: "reel 01 · cover", caption: "[Top reel 01 caption]" },
-  { img: "reel 02 · cover", caption: "[Top reel 02 caption]" },
-  { img: "post 03 · cover", caption: "[Top post 03 caption]" },
+  {
+    url: "https://www.instagram.com/reel/Db5rOqtM90G/",
+    views: "84.7K",
+    creator: "darvimukhijaa",
+    img: "reel · ramen + dumplings",
+    caption: "Craving ramen and dumplings? This one became a new comfort-food spot.",
+  },
+  {
+    url: "https://www.instagram.com/reel/DcFzZ-zhyyk/",
+    views: "70.7K",
+    creator: "withmahekk",
+    img: "reel · cheese ramen + momos",
+    caption: "“Ahmedabad, we found your next ramen spot.” Cheese Ramen rated 9.5/10.",
+  },
+  {
+    url: "https://www.instagram.com/reel/Dd1YFeQtGdL/",
+    views: "3.7K",
+    creator: "allabouttanu48",
+    img: "reel · cozy corners, Gandhinagar",
+    caption: "Japanese vibes, cozy corners and a comforting bowl in Gandhinagar.",
+  },
 ];
 
 export const franchisePerks = [
