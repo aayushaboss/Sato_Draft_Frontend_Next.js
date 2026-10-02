@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FranchiseContact from "@/components/FranchiseContact";
 import JoinForm from "@/components/JoinForm";
 import MotionController from "@/components/MotionController";
 import Nav from "@/components/Nav";
@@ -267,9 +268,9 @@ export default function Home() {
                 </div>
               </div>
             ))}
-            <a data-r="" href="#contact" className="pill">
-              Bring SATO to your city
-            </a>
+            <div data-r="" className="franchise-cta">
+              <FranchiseContact />
+            </div>
           </div>
         </div>
       </section>

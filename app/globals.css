@@ -430,7 +430,47 @@ a:hover { color: var(--red); }
 .fperk div { display: flex; flex-direction: column; gap: 6px; }
 .fperk b { font-family: var(--font-display); font-weight: 400; font-size: clamp(17px, 1.4vw, 20px); letter-spacing: -0.01em; }
 .fperk div span { font-size: 14px; line-height: 1.6; color: var(--paper); opacity: 0.85; }
-.franchise-list .pill { align-self: flex-start; margin-top: 32px; padding: 15px 26px; }
+.franchise-cta { align-self: flex-start; margin-top: 32px; }
+.franchise-cta .pill { border: 0; cursor: pointer; font: inherit; font-size: 14px; padding: 15px 34px; }
+
+/* ---------- Franchise enquiry dialog ---------- */
+.enquiry {
+  width: min(440px, calc(100vw - 32px)); max-height: calc(100svh - 32px); padding: 0; border: 0;
+  border-radius: 20px; background: var(--white); color: var(--ink); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+.enquiry::backdrop { background: rgba(27, 27, 27, 0.6); backdrop-filter: blur(4px); }
+.enquiry[open] { animation: enquiryIn 0.35s var(--ease); }
+@keyframes enquiryIn { from { opacity: 0; transform: translateY(16px) scale(0.98); } }
+@media (prefers-reduced-motion: reduce) { .enquiry[open] { animation: none; } }
+.enquiry-panel { position: relative; padding: clamp(24px, 5vw, 36px); }
+.enquiry-close {
+  position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border: 0; border-radius: 50%;
+  background: var(--paper); color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.enquiry-close:hover { background: var(--ink); color: var(--white); }
+.enquiry form, .enquiry-done { display: flex; flex-direction: column; gap: 14px; }
+.enquiry h3 {
+  margin: 0; font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(24px, 4vw, 30px); line-height: 1.1; letter-spacing: -0.02em; padding-right: 40px;
+}
+.enquiry-sub, .enquiry-done p { margin: 0 0 6px; font-size: 14px; line-height: 1.6; opacity: 0.75; }
+.enquiry label { display: flex; flex-direction: column; gap: 6px; }
+.enquiry label span { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+.enquiry input {
+  width: 100%; border: 1px solid rgba(27, 27, 27, 0.18); border-radius: 12px; padding: 13px 14px;
+  font: inherit; font-size: 16px; color: var(--ink); background: var(--white); outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.enquiry input:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(180, 12, 61, 0.15); }
+.enquiry input:-webkit-autofill { -webkit-box-shadow: 0 0 0 100px var(--white) inset; -webkit-text-fill-color: var(--ink); }
+.enquiry-submit {
+  margin-top: 6px; border: 0; border-radius: 999px; padding: 15px; cursor: pointer;
+  font: inherit; font-size: 15px; background: var(--red); color: var(--white); transition: background 0.2s;
+}
+.enquiry-submit:hover { background: var(--ink); }
+.enquiry-done { align-items: flex-start; }
+.enquiry-check { width: 48px; height: 48px; border-radius: 50%; background: var(--red); color: var(--white); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+.enquiry-done .enquiry-submit { align-self: stretch; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: var(--white); padding: clamp(80px, 12vh, 130px) var(--gutter) 40px; }
