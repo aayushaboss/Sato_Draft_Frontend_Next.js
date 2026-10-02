@@ -419,11 +419,24 @@ a:hover { color: var(--red); }
 /* ---------- Franchise ---------- */
 .franchise { background: var(--ink); color: var(--white); padding: clamp(72px, 11vh, 120px) var(--gutter); }
 .franchise-copy { max-width: 520px; }
+/* align-self keeps the flex column from stretching the logo to full width. */
+.franchise-logo { align-self: flex-start; height: clamp(44px, 4vw, 56px); width: auto; display: block; margin-bottom: 8px; }
+/* Solid badge rather than thin red text, which reads poorly on the dark background. */
+.franchise-badge {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px; border-radius: 999px; background: var(--red); color: var(--white);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.24em;
+}
+.franchise-badge span { font-family: var(--font-jp); font-weight: 700; letter-spacing: 0.1em; padding-right: 10px; border-right: 1px solid rgba(255, 255, 255, 0.45); }
 .franchise .h2 { color: var(--white); }
 .franchise .body { color: var(--paper); }
 /* Franchise enquiry form, inline on the dark franchise section. */
 .franchise-form { width: 100%; max-width: 520px; justify-self: end; }
-.enquiry { display: flex; flex-direction: column; gap: 18px; }
+/* Form and thank-you share one grid cell, so swapping them never changes the height. */
+.enquiry-wrap { display: grid; }
+.enquiry-wrap > * { grid-area: 1 / 1; }
+.enquiry { display: flex; flex-direction: column; gap: 18px; transition: opacity 0.3s; }
+.enquiry.is-sent { visibility: hidden; opacity: 0; }
 .enquiry .eyebrow { color: var(--paper); padding-bottom: 4px; }
 .enquiry label { display: flex; flex-direction: column; gap: 8px; }
 .enquiry label span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--paper); opacity: 0.75; }
@@ -435,7 +448,9 @@ a:hover { color: var(--red); }
 .enquiry input:focus { border-color: var(--red); background: rgba(255, 255, 255, 0.07); }
 .enquiry input:-webkit-autofill { -webkit-box-shadow: 0 0 0 100px #262626 inset; -webkit-text-fill-color: var(--white); caret-color: var(--white); }
 .enquiry .pill { align-self: flex-start; margin-top: 8px; border: 0; cursor: pointer; font: inherit; font-size: 15px; padding: 15px 40px; }
-.enquiry-done { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.enquiry-done { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 14px; animation: enquiryIn 0.4s var(--ease); }
+@keyframes enquiryIn { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .enquiry-done { animation: none; } }
 .enquiry-check { width: 52px; height: 52px; border-radius: 50%; background: var(--red); color: var(--white); display: flex; align-items: center; justify-content: center; }
 .enquiry-done h3 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; color: var(--white); }
 .enquiry-done p { margin: 0; font-size: 16px; line-height: 1.7; color: var(--paper); max-width: 40ch; }

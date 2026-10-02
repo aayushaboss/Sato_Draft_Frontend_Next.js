@@ -244,7 +244,10 @@ export default function Home() {
       <section id="franchise" className="franchise">
         <div className="wrap split">
           <div className="stack franchise-copy">
-            <div data-r="" className="eyebrow-jp">加盟 — Franchise</div>
+            <Image data-r="" src="/assets/logo-lockup-light.png" alt="SATO Ramen Bowl" width={152} height={56} className="franchise-logo" />
+            <div data-r="" className="franchise-badge">
+              <span lang="ja">加盟</span>FRANCHISE
+            </div>
             <h2 data-r="" className="h2">
               Your city.
               <br />
