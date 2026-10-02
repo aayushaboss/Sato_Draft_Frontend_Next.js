@@ -138,11 +138,9 @@ export default function Home() {
             </p>
           </div>
           <div className="outlet-grid">
-            {outlets.map((o, i) => (
+            {outlets.map((o) => (
               <div key={o.name} data-r="" className="outlet">
-                <Placeholder label={o.alt ?? "storefront"} src={o.img} sizes="(min-width: 1200px) 280px, (min-width: 700px) 33vw, 100vw">
-                  <span className="outlet-tag">OUTLET 0{i + 1}</span>
-                </Placeholder>
+                <Placeholder label={o.alt ?? "storefront"} src={o.img} sizes="(min-width: 1200px) 280px, (min-width: 700px) 33vw, 100vw" />
                 <div className="outlet-body">
                   <span className="outlet-name">{o.name}</span>
                   <span className="outlet-addr">

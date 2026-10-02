@@ -336,7 +336,6 @@ a:hover { color: var(--red); }
 .outlet:hover { border-color: var(--red); transform: translateY(-4px); }
 .outlet .par { aspect-ratio: 4 / 3; }
 .outlet .ph-label { font-size: 11px; }
-.outlet-tag { position: absolute; top: 12px; left: 12px; background: var(--red); color: var(--white); font-size: 10px; letter-spacing: 0.2em; padding: 5px 9px; border-radius: 999px; }
 .outlet-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .outlet-name { font-family: var(--font-display); font-size: clamp(18px, 1.4vw, 22px); letter-spacing: -0.015em; line-height: 1.15; }
 .outlet-addr { font-size: 13px; line-height: 1.55; opacity: 0.75; }
