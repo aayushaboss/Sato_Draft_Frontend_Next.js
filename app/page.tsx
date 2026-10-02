@@ -23,7 +23,7 @@ export default function Home() {
 
       <header id="top" className="hero">
         <div className="hero-frame">
-          <Placeholder label="Bowl of SATO ramen with greens, noodles and chopsticks on a red table" src="/images/hero.webp" sizes="100vw" quality={90} priority className="hero-media">
+          <Placeholder label="Bowl of creamy SATO ramen with cheese, a dumpling and fresh vegetables, chopsticks resting on top, on a red table" src="/images/hero-cheesy-ramen.webp" sizes="100vw" quality={90} priority className="hero-media">
             <div className="hero-jp">佐藤 · ラーメン</div>
           </Placeholder>
           <div className="overlay hero-copy">
