@@ -71,16 +71,6 @@ export default function Home() {
               <div data-r="" className="bowl-dot" />
             </div>
           </div>
-          <div className="split story-quote">
-            <Placeholder label="founder · at the pass" tone="light" className="founder-img" reveal />
-            <div className="stack-sm story-copy">
-              <div data-r="" className="quote-mark">“</div>
-              <p data-r="" className="quote">
-                I couldn&apos;t find ramen that felt authentic and still connected with the Indian soul. So I decided to create it.
-              </p>
-              <div data-r="" className="byline">Founder, SATO Ramen Bowl</div>
-            </div>
-          </div>
         </div>
       </section>
 
