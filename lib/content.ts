@@ -40,27 +40,31 @@ export const perks = [
   { jp: "仲", k: "Find your people", v: "Anime fans, spice lovers, late-night slurpers." },
 ];
 
-// Top reels on @sato_ramenbowl by views (checked 2 Oct 2026). Each card links to the reel on Instagram.
+// Top reels on @sato_ramenbowl by views (checked 2 Oct 2026). Each card links to the reel on Instagram;
+// covers are the reels' own thumbnails, saved locally because Instagram image URLs expire.
 export const reels = [
   {
     url: "https://www.instagram.com/reel/Db5rOqtM90G/",
     views: "84.7K",
     creator: "darvimukhijaa",
-    img: "reel · ramen + dumplings",
-    caption: "Craving ramen and dumplings? This one became a new comfort-food spot.",
+    cover: "/reels/Db5rOqtM90G.jpg",
+    alt: "Red-and-white SATO interior with paper lanterns, titled Ramen X Cosplay in Ahmedabad",
+    caption: "Ramen, dumplings and cosplay. A new comfort-food spot in Ahmedabad.",
   },
   {
     url: "https://www.instagram.com/reel/DcFzZ-zhyyk/",
     views: "70.7K",
     creator: "withmahekk",
-    img: "reel · cheese ramen + momos",
+    cover: "/reels/DcFzZ-zhyyk.jpg",
+    alt: "Guest with a paper umbrella under SATO's parasol ceiling, titled Japan in Ahmedabad",
     caption: "“Ahmedabad, we found your next ramen spot.” Cheese Ramen rated 9.5/10.",
   },
   {
     url: "https://www.instagram.com/reel/Dd1YFeQtGdL/",
     views: "3.7K",
     creator: "allabouttanu48",
-    img: "reel · cozy corners, Gandhinagar",
+    cover: "/reels/Dd1YFeQtGdL.jpg",
+    alt: "Bowl of SATO ramen with tofu, corn and greens beside bamboo steamers",
     caption: "Japanese vibes, cozy corners and a comforting bowl in Gandhinagar.",
   },
 ];

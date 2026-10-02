@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 
 type Props = {
@@ -6,17 +7,20 @@ type Props = {
   className?: string;
   /** Overrides the striped background of the parallax layer. */
   background?: string;
+  /** Real image for the parallax layer; `label` becomes its alt text. */
+  src?: string;
+  sizes?: string;
   reveal?: boolean;
   children?: React.ReactNode;
   style?: CSSProperties;
 };
 
-/** Striped image placeholder with a parallax inner layer (driven by MotionController). */
-export default function Placeholder({ label, tone = "dark", className = "", background, reveal, children, style }: Props) {
+/** Image block with a parallax inner layer (driven by MotionController); striped placeholder until `src` is set. */
+export default function Placeholder({ label, tone = "dark", className = "", background, src, sizes = "100vw", reveal, children, style }: Props) {
   return (
     <div data-par="" data-r={reveal ? "" : undefined} className={`par ${className}`} style={style}>
-      <div data-par-in="" className={`par-in ${background ? "" : tone}`} style={background ? { background } : undefined}>
-        <span className="ph-label">{label}</span>
+      <div data-par-in="" className={`par-in ${background || src ? "" : tone}`} style={background ? { background } : undefined}>
+        {src ? <Image src={src} alt={label} fill sizes={sizes} className="par-img" /> : <span className="ph-label">{label}</span>}
       </div>
       {children}
     </div>
