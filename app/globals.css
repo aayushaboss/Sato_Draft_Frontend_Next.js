@@ -420,7 +420,6 @@ a:hover { color: var(--red); }
 .franchise-copy { max-width: 520px; }
 .franchise .h2 { color: var(--white); }
 .franchise .body { color: var(--paper); }
-.franchise-img { aspect-ratio: 16 / 8; border-radius: 20px; margin-top: 8px; }
 .franchise-list { display: flex; flex-direction: column; }
 .franchise-list .eyebrow { color: var(--paper); padding-bottom: 20px; }
 .fperk { padding: clamp(14px, 1.6vw, 20px) 0; border-top: 1px solid rgba(255, 255, 255, 0.2); display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; }

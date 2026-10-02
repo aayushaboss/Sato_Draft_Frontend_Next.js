@@ -254,7 +254,6 @@ export default function Home() {
               SATO is growing. We&apos;re looking for partners who want to build SATO in their city, with everything it takes to run it
               the SATO way.
             </p>
-            <Placeholder label="team behind the counter" className="franchise-img" reveal />
           </div>
           <div className="franchise-list">
             <div data-r="" className="eyebrow">WHAT YOU GET</div>
