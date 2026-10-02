@@ -4,7 +4,7 @@ import MotionController from "@/components/MotionController";
 import Nav from "@/components/Nav";
 import Placeholder from "@/components/Placeholder";
 import RamenCarousel from "@/components/RamenCarousel";
-import { dishCards, dishes, franchisePerks, instagramUrl, outlets, perks, reels } from "@/lib/content";
+import { contact, directionsUrl, dishCards, displayAddr, dishes, franchisePerks, instagramUrl, outlets, perks, reels } from "@/lib/content";
 
 const Chevron = ({ size, width = 2 }: { size: number; width?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={width} strokeLinecap="round" strokeLinejoin="round">
@@ -144,16 +144,16 @@ export default function Home() {
                 <div className="outlet-body">
                   <span className="outlet-name">{o.name}</span>
                   <span className="outlet-addr">
-                    {o.addr}
+                    {displayAddr(o)}
                     <br />
                     12:00 – 23:00 · All days
                   </span>
                   <div className="outlet-links">
-                    <a href="#location">
+                    <a href={directionsUrl(o)} target="_blank" rel="noreferrer">
                       Directions
                       <Chevron size={12} width={2.4} />
                     </a>
-                    <a href="#location">Call</a>
+                    <a href={`tel:${contact.tel}`}>Call</a>
                   </div>
                 </div>
               </div>
@@ -289,8 +289,8 @@ export default function Home() {
               </div>
               <div className="footer-col">
                 <b>CONTACT</b>
-                <span>[Phone]</span>
-                <span>[Email]</span>
+                <a href={`tel:${contact.tel}`}>{contact.phone}</a>
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
                 <a href={instagramUrl} target="_blank" rel="noreferrer">
                   Instagram
                 </a>
