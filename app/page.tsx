@@ -117,14 +117,14 @@ export default function Home() {
       </section>
 
       <section className="signature">
-        <Placeholder label="Bowl of Byakugan udon noodles with tofu, corn, spring onion and sesame on a red background" src="/images/signature-byakugan-udon.webp" sizes="100vw" className="signature-media" />
+        <Placeholder label="Bowl of chilly garlic udon with tofu, corn, spring onion and sesame on a red background" src="/images/signature-chilly-garlic-udon.webp" sizes="100vw" className="signature-media" />
         <div className="overlay signature-copy">
           <div className="stack" style={{ gap: 16 }}>
             <span data-r="" className="eyebrow">NEW SIGNATURE</span>
-            <h2 data-r="">Byakugan Udon Noodles</h2>
+            <h2 data-r="">Chilly Garlic Udon</h2>
           </div>
           <div data-r="" className="stack signature-side">
-            <p>Thick, chewy udon tossed in a fiery glaze with tofu, sweet corn and spring onion.</p>
+            <p>Thick, chewy udon tossed in a fiery chilly garlic glaze with tofu, sweet corn and spring onion.</p>
             <a href="#location" className="pill">
               Order this bowl
             </a>
