@@ -311,10 +311,12 @@ a:hover { color: var(--red); }
 /* ---------- Signature ---------- */
 .signature { position: relative; background: var(--ink); }
 .signature-media { width: 100%; aspect-ratio: 16 / 9; }
-.signature-media .par-in { top: -14%; bottom: -14%; }
+.signature-media .par-in { top: -6%; bottom: -6%; }
+.signature-media .par-img { object-position: 70% 50%; }
 @media (min-width: 1024px) {
-  /* Darken the bottom so the overlaid title and copy stay readable on the photo. */
-  .signature-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(27, 27, 27, 0.8) 0%, rgba(27, 27, 27, 0.3) 35%, rgba(27, 27, 27, 0) 60%), linear-gradient(to right, rgba(27, 27, 27, 0.55) 0%, rgba(27, 27, 27, 0) 50%); pointer-events: none; }
+  /* The photo's left half is open red: stack all the copy there, over a soft fade. */
+  .signature-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(27, 27, 27, 0.4) 0%, rgba(27, 27, 27, 0.12) 40%, rgba(27, 27, 27, 0) 55%); pointer-events: none; }
+  .signature .signature-copy { top: 0; max-width: 50%; flex-direction: column; flex-wrap: nowrap; justify-content: center; align-items: flex-start; gap: clamp(24px, 3vw, 40px); }
   .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(27, 27, 27, 0.45) 0%, rgba(27, 27, 27, 0.15) 40%, rgba(27, 27, 27, 0) 60%); pointer-events: none; }
 }
 .signature h2 { max-width: 12ch; }
@@ -326,6 +328,9 @@ a:hover { color: var(--red); }
 .signature-side { max-width: 340px; }
 .signature-side p { margin: 0; font-size: 16px; line-height: 1.7; }
 .signature-side .pill { align-self: flex-start; }
+/* The photo is red, so the CTA inverts to stay visible. */
+.signature-side .pill { background: var(--white); color: var(--ink); }
+.signature-side .pill:hover { background: var(--ink); color: var(--white); }
 
 /* ---------- Locations ---------- */
 .location { --gap: clamp(12px, 1.4vw, 20px); padding: clamp(72px, 11vh, 120px) var(--gutter); }
