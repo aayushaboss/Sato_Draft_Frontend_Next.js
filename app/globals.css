@@ -203,13 +203,21 @@ a:hover { color: var(--red); }
 }
 .bowl.no-anim { transition: none; }
 .bowl-face {
-  width: 100%; height: 100%; border-radius: 50%;
+  width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
   border: clamp(8px, 1vw, 14px) solid var(--paper);
-  background: repeating-linear-gradient(135deg, #2a2a2a 0 10px, #232323 10px 20px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-  display: flex; align-items: center; justify-content: center;
   transition: transform 1s var(--ease-swing);
 }
+/* Spins on hover like the story bowl; pausing (not removing) the animation
+   keeps the angle when the pointer leaves, so it never snaps back. */
+.bowl-spin-layer {
+  width: 100%; height: 100%; border-radius: 50%;
+  background: repeating-linear-gradient(135deg, #2a2a2a 0 10px, #232323 10px 20px);
+  display: flex; align-items: center; justify-content: center;
+  animation: satoSpin 20s linear infinite paused;
+}
+.bowl:hover .bowl-spin-layer { animation-play-state: running; }
+@media (prefers-reduced-motion: reduce) { .bowl-spin-layer { animation: none; } }
 .bowl-face span { font-family: var(--font-mono); font-size: 11px; color: var(--paper); opacity: 0.7; text-align: center; line-height: 1.6; }
 .new-badge {
   position: absolute; top: 2%; right: 4%; width: 22%; aspect-ratio: 1; background: var(--red);

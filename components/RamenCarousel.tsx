@@ -78,11 +78,13 @@ export default function RamenCarousel({ autoplay = true }: { autoplay?: boolean 
           return (
             <div key={d.name} className={`bowl${hide ? " no-anim" : ""}`} style={style} onClick={() => step(off)}>
               <div className="bowl-face" style={{ transform: `rotate(${raw * -60}deg)` }}>
-                <span>
-                  {d.name.toLowerCase()}
-                  <br />
-                  top-down
-                </span>
+                <div className="bowl-spin-layer">
+                  <span>
+                    {d.name.toLowerCase()}
+                    <br />
+                    top-down
+                  </span>
+                </div>
               </div>
               {d.isNew && (
                 <div className="new-badge">
