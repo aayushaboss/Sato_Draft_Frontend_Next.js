@@ -226,9 +226,10 @@ a:hover { color: var(--red); }
 .arrow { all: unset; cursor: pointer; color: var(--white); padding: 8px; }
 .arrow:hover { color: var(--red); }
 .arrow svg { display: block; }
-.ramen-mid { display: flex; align-items: center; justify-content: center; gap: clamp(16px, 3vw, 32px); flex-wrap: wrap; }
+/* Description and CTA stack on the dish name's centre line. */
+.ramen-mid { display: flex; flex-direction: column; align-items: center; gap: clamp(14px, 2.4vh, 20px); }
 .dish-desc {
-  margin: 0; font-size: 14px; line-height: 1.6; color: var(--paper);
+  margin: 0; font-size: 14px; line-height: 1.6; color: var(--paper); text-align: center;
   width: min(100%, 34ch); height: 3.2em; overflow: hidden;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-wrap: balance;
 }
