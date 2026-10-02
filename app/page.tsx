@@ -239,7 +239,7 @@ export default function Home() {
                   @{r.creator}
                 </span>
               </div>
-              <Placeholder label={r.alt} src={r.cover} sizes="(min-width: 1024px) 25vw, (min-width: 600px) 50vw, 100vw">
+              <Placeholder label={r.alt} src={r.cover} quality={90} sizes="(min-width: 1024px) 25vw, (min-width: 600px) 50vw, 100vw">
                 <div className="play">▶</div>
               </Placeholder>
               <p>{r.caption}</p>
