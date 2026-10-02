@@ -169,6 +169,7 @@ a:hover { color: var(--red); }
   .overlay { position: absolute; }
   .hero-media { max-height: calc(100svh - 69px); }
   .hero-tag, .hero h1, .hero h1 span { color: var(--white); }
+  .hero .dot { background: var(--white); }
 }
 
 /* ---------- Story ---------- */
