@@ -178,7 +178,7 @@ a:hover { color: var(--red); }
 .story .split { gap: clamp(28px, 5vw, 120px); }
 .story-copy { max-width: 520px; }
 .bowl-orbit { position: relative; width: 100%; max-width: 620px; justify-self: end; aspect-ratio: 1; }
-/* Phones: the bowl photo is drawn 24% larger than its frame, so shrink the frame to keep it on screen. */
+/* Phones: a slightly smaller bowl leaves breathing room around the ring. */
 @media (max-width: 759px) { .bowl-orbit { width: 80%; justify-self: center; } }
 .bowl-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(27, 27, 27, 0.15); }
 .bowl-disc { position: absolute; inset: 6%; border-radius: 50%; }
@@ -215,8 +215,8 @@ a:hover { color: var(--red); }
 }
 .bowl:hover .bowl-spin-layer { animation-play-state: running; }
 @media (prefers-reduced-motion: reduce) { .bowl-spin-layer { animation: none; } }
-/* Bowl cut-outs have ~10% transparent margin; oversize them so the kraft rim meets the frame edge. */
-.bowl-photo-wrap { position: absolute; inset: -12%; pointer-events: none; }
+/* Bowl photos are cropped so the bowl is centred and fills the square, so the frame matches the photo exactly. */
+.bowl-photo-wrap { position: absolute; inset: 0; pointer-events: none; }
 .bowl-photo-wrap img { object-fit: contain; }
 .bowl .bowl-photo-wrap img { filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.55)); }
 .bowl-orbit .bowl-photo-wrap img { filter: drop-shadow(0 18px 28px rgba(27, 27, 27, 0.22)); }

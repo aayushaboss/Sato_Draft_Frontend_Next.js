@@ -10,11 +10,11 @@ export const navLinks = [
 export type Dish = { name: string; desc: string; img: string; alt: string; isNew?: boolean };
 
 export const dishes: Dish[] = [
-  { name: "X Ramen", isNew: true, img: "/bowls/x-ramen.webp", alt: "Top-down bowl of ramen with chilli-glazed tofu cubes, dumpling and pickled vegetables", desc: "Bold, mysterious and full of character, with a little SATO attitude." },
-  { name: "Kings Cheesy Ramen", img: "/bowls/kings-cheesy-ramen.webp", alt: "Top-down bowl of creamy ramen with cheese cubes, a dumpling, snap peas and spring onion", desc: "A royal, creamy comfort bowl made for serious cheese lovers." },
-  { name: "Naruto Veg Ramen", img: "/bowls/naruto-veg-ramen.webp", alt: "Top-down bowl of creamy veg ramen with a dumpling, cucumber, red cabbage and carrot", desc: "Warm, comforting and packed with playful Japanese anime energy." },
-  { name: "Kimchi Veg Ramen", img: "/bowls/kimchi-veg-ramen.webp", alt: "Top-down bowl of ramen topped with kimchi and sesame seeds", desc: "A lively kimchi kick meets slow, warming ramen comfort." },
-  { name: "Captain Sato Ramen", img: "/bowls/captain-sato-ramen.webp", alt: "Top-down bowl of ramen with chilli-dusted tofu slabs and a dumpling", desc: "Hearty, warm and generous. The bowl that is unmistakably SATO." },
+  { name: "X Ramen", isNew: true, img: "/ramen/x-ramen.webp", alt: "Top-down bowl of ramen with chilli-glazed tofu cubes, dumpling and pickled vegetables", desc: "Bold, mysterious and full of character, with a little SATO attitude." },
+  { name: "Kings Cheesy Ramen", img: "/ramen/kings-cheesy-ramen.webp", alt: "Top-down bowl of creamy ramen with cheese cubes, a dumpling, snap peas and spring onion", desc: "A royal, creamy comfort bowl made for serious cheese lovers." },
+  { name: "Naruto Veg Ramen", img: "/ramen/naruto-veg-ramen.webp", alt: "Top-down bowl of creamy veg ramen with a dumpling, cucumber, red cabbage and carrot", desc: "Warm, comforting and packed with playful Japanese anime energy." },
+  { name: "Kimchi Veg Ramen", img: "/ramen/kimchi-veg-ramen.webp", alt: "Top-down bowl of ramen topped with kimchi and sesame seeds", desc: "A lively kimchi kick meets slow, warming ramen comfort." },
+  { name: "Captain Sato Ramen", img: "/ramen/captain-sato-ramen.webp", alt: "Top-down bowl of ramen with chilli-dusted tofu slabs and a dumpling", desc: "Hearty, warm and generous. The bowl that is unmistakably SATO." },
 ];
 
 export const dishCards = [
