@@ -14,7 +14,10 @@
   --stripes-light: repeating-linear-gradient(135deg, #e6eadc 0 10px, #eef2e6 10px 20px);
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+/* Android draws a blue box on tap; that is off above. Keyboard users still get a clear focus ring. */
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.burger:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 /* Mobile browsers ignore body overflow-x alone; clip on both so nothing can make the page pan sideways. */
 html { scroll-behavior: auto; scrollbar-width: none; overflow-x: hidden; overflow-x: clip; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
