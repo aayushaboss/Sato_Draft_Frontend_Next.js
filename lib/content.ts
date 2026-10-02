@@ -128,12 +128,6 @@ export const reels = [
   },
 ];
 
-export const franchisePerks = [
-  { k: "Brand & identity", v: "The complete SATO look, voice and experience." },
-  { k: "Menu", v: "A proven Asian comfort-food menu." },
-  { k: "Training & SOPs", v: "Staff training and systems built for consistency." },
-  { k: "Launch & marketing", v: "Support to open strong and keep growing." },
-  { k: "Quality standards", v: "Every SATO should feel like SATO." },
-];
-
 export const instagramUrl = "https://www.instagram.com/sato_ramenbowl/";
+// TODO: SATO's LinkedIn page URL (not found publicly yet).
+export const linkedinUrl = "https://www.linkedin.com/";

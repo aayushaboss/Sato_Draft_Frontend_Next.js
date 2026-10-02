@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import FranchiseContact from "@/components/FranchiseContact";
-import JoinForm from "@/components/JoinForm";
 import MotionController from "@/components/MotionController";
 import Nav from "@/components/Nav";
 import Placeholder from "@/components/Placeholder";
 import RamenCarousel from "@/components/RamenCarousel";
-import { contact, directionsUrl, dishCards, displayAddr, telHref, dishes, franchisePerks, instagramUrl, outlets, perks, reels } from "@/lib/content";
+import { contact, directionsUrl, dishCards, displayAddr, telHref, dishes, instagramUrl, outlets, perks, reels } from "@/lib/content";
 
 const Chevron = ({ size, width = 2 }: { size: number; width?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={width} strokeLinecap="round" strokeLinejoin="round">
@@ -178,7 +177,6 @@ export default function Home() {
             <p data-r="" className="body" style={{ maxWidth: "40ch" }}>
               Red Circle members unlock SATO&apos;s secret menu, and taste every new launch before anyone else. Launching soon.
             </p>
-            <JoinForm />
           </div>
           <div className="perks">
             {perks.map((p) => (
@@ -257,20 +255,8 @@ export default function Home() {
               the SATO way.
             </p>
           </div>
-          <div className="franchise-list">
-            <div data-r="" className="eyebrow">WHAT YOU GET</div>
-            {franchisePerks.map((p, i) => (
-              <div key={p.k} data-r="" className="fperk">
-                <span>0{i + 1}</span>
-                <div>
-                  <b>{p.k}</b>
-                  <span>{p.v}</span>
-                </div>
-              </div>
-            ))}
-            <div data-r="" className="franchise-cta">
-              <FranchiseContact />
-            </div>
+          <div data-r="" className="franchise-form">
+            <FranchiseContact />
           </div>
         </div>
       </section>

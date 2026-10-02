@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/lib/content";
+import SocialIcons from "./SocialIcons";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -29,6 +30,7 @@ export default function Nav() {
             </a>
           ))}
         </div>
+        <SocialIcons className="nav-social" />
         <button
           className={`burger${open ? " open" : ""}`}
           aria-label="Menu"
@@ -49,9 +51,12 @@ export default function Nav() {
               </a>
             ))}
           </div>
-          <a href="#location" className="pill" onClick={close}>
-            Find your SATO
-          </a>
+          <div className="mobile-menu-foot">
+            <SocialIcons />
+            <a href="#location" className="pill" onClick={close}>
+              Find your SATO
+            </a>
+          </div>
         </div>
       )}
     </>
