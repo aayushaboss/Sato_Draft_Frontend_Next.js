@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import JoinForm from "@/components/JoinForm";
 import MotionController from "@/components/MotionController";
 import Nav from "@/components/Nav";
@@ -302,6 +303,7 @@ export default function Home() {
           </div>
           <div className="footer-base">
             <span>© 2026 SATO Ramen Bowl · Nutricore Foods Pvt. Ltd.</span>
+            <Link href="/terms">Terms &amp; Conditions</Link>
             <span>Tradition in taste. Emotion in every bite.</span>
           </div>
         </div>
