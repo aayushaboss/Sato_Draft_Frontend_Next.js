@@ -11,17 +11,19 @@ type Props = {
   src?: string;
   sizes?: string;
   quality?: number;
+  /** Preload (above-the-fold images). */
+  priority?: boolean;
   reveal?: boolean;
   children?: React.ReactNode;
   style?: CSSProperties;
 };
 
 /** Image block with a parallax inner layer (driven by MotionController); striped placeholder until `src` is set. */
-export default function Placeholder({ label, tone = "dark", className = "", background, src, sizes = "100vw", quality, reveal, children, style }: Props) {
+export default function Placeholder({ label, tone = "dark", className = "", background, src, sizes = "100vw", quality, priority, reveal, children, style }: Props) {
   return (
     <div data-par="" data-r={reveal ? "" : undefined} className={`par ${className}`} style={style}>
       <div data-par-in="" className={`par-in ${background || src ? "" : tone}`} style={background ? { background } : undefined}>
-        {src ? <Image src={src} alt={label} fill sizes={sizes} quality={quality} className="par-img" /> : <span className="ph-label">{label}</span>}
+        {src ? <Image src={src} alt={label} fill sizes={sizes} quality={quality} priority={priority} className="par-img" /> : <span className="ph-label">{label}</span>}
       </div>
       {children}
     </div>

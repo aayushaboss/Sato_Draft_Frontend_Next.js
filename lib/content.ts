@@ -7,24 +7,21 @@ export const navLinks = [
   { href: "#franchise", label: "Franchise" },
 ];
 
-export type Dish = { name: string; desc: string; isNew?: boolean };
+export type Dish = { name: string; desc: string; img: string; alt: string; isNew?: boolean };
 
 export const dishes: Dish[] = [
-  { name: "X Ramen", isNew: true, desc: "Bold, mysterious and full of character, with a little SATO attitude." },
-  { name: "Kings Cheesy Ramen", desc: "A royal, creamy comfort bowl made for serious cheese lovers." },
-  { name: "Naruto Veg Ramen", desc: "Warm, comforting and packed with playful Japanese anime energy." },
-  { name: "Kimchi Veg Ramen", desc: "A lively kimchi kick meets slow, warming ramen comfort." },
-  { name: "Captain Sato Ramen", desc: "Hearty, warm and generous. The bowl that is unmistakably SATO." },
+  { name: "X Ramen", isNew: true, img: "/bowls/x-ramen.webp", alt: "Top-down bowl of ramen with chilli-glazed tofu cubes, dumpling and pickled vegetables", desc: "Bold, mysterious and full of character, with a little SATO attitude." },
+  { name: "Kings Cheesy Ramen", img: "/bowls/kings-cheesy-ramen.webp", alt: "Top-down bowl of creamy ramen with cheese cubes, a dumpling, snap peas and spring onion", desc: "A royal, creamy comfort bowl made for serious cheese lovers." },
+  { name: "Naruto Veg Ramen", img: "/bowls/naruto-veg-ramen.webp", alt: "Top-down bowl of creamy veg ramen with a dumpling, cucumber, red cabbage and carrot", desc: "Warm, comforting and packed with playful Japanese anime energy." },
+  { name: "Kimchi Veg Ramen", img: "/bowls/kimchi-veg-ramen.webp", alt: "Top-down bowl of ramen topped with kimchi and sesame seeds", desc: "A lively kimchi kick meets slow, warming ramen comfort." },
+  { name: "Captain Sato Ramen", img: "/bowls/captain-sato-ramen.webp", alt: "Top-down bowl of ramen with chilli-dusted tofu slabs and a dumpling", desc: "Hearty, warm and generous. The bowl that is unmistakably SATO." },
 ];
 
-const lightStripes = "repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 10px,rgba(255,255,255,0) 10px 20px)";
-const darkStripes = "repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 10px,rgba(255,255,255,0) 10px 20px)";
-
 export const dishCards = [
-  { name: "Iconic Ramen", jp: "ラーメン", img: "signature ramen · on red", bg: "#b40c3d", pattern: lightStripes },
-  { name: "Bao Cloud Bites", jp: "包子", img: "bao trio · on black", bg: "#1B1B1B", pattern: darkStripes },
-  { name: "Little Pockets", jp: "餃子", img: "dimsum basket · on black", bg: "#1B1B1B", pattern: darkStripes },
-  { name: "Topokki Saga", jp: "トッポッキ", img: "topokki · red/white split", bg: "linear-gradient(135deg,#b40c3d 55%,#eef2e6 55%)", pattern: lightStripes },
+  { name: "Sato Red Flame Udon", jp: "うどん", img: "/menu/sato-red-flame-udon.webp", alt: "Spicy red udon with tofu, corn and spring onion in a kraft tray" },
+  { name: "Teriyaki Veggie Bao", jp: "包子", img: "/menu/teriyaki-veggie-bao.webp", alt: "Two teriyaki veggie bao with slaw and chilli in a kraft tray" },
+  { name: "Korean Cheese Corn Dog", jp: "ハットグ", img: "/menu/korean-cheese-corn-dog.webp", alt: "Crumb-coated Korean cheese corn dog drizzled with cheese and chilli sauce" },
+  { name: "Butter Garlic Tteokbokki", jp: "トッポッキ", img: "/menu/butter-garlic-tteokbokki.webp", alt: "Creamy butter garlic tteokbokki topped with spring onion and sesame" },
 ];
 
 export const outlets = [1, 2, 3, 4, 5].map((i) => ({

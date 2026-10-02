@@ -82,6 +82,10 @@ a:hover { color: var(--red); }
 .par-in.light { background: var(--stripes-light); }
 .ph-label { font-family: var(--font-mono); font-size: 12px; opacity: 0.6; }
 .par-img { object-fit: cover; }
+/* Less parallax overscan on the hero so the bowl, which sits right in the photo, isn't pushed under the headline. */
+.hero-media .par-in { top: -6%; bottom: -6%; }
+.hero-media .par-img { object-position: 50% 50%; }
+.dish-card .par-in { top: -6%; bottom: -6%; }
 .par-in.dark .ph-label { color: var(--paper); }
 
 /* ---------- Nav ---------- */
@@ -145,6 +149,7 @@ a:hover { color: var(--red); }
   position: absolute; top: var(--gutter); right: var(--gutter);
   font-family: var(--font-jp); font-size: 15px; letter-spacing: 0.5em;
   writing-mode: vertical-rl; white-space: nowrap; color: var(--white);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6); z-index: 1;
 }
 .overlay { position: relative; left: 0; right: 0; bottom: 0; }
 .hero-copy { padding: clamp(24px, 4vw, 56px) var(--gutter) clamp(40px, 5vw, 72px); max-width: 1560px; }
@@ -171,7 +176,7 @@ a:hover { color: var(--red); }
 .story-copy { max-width: 520px; }
 .bowl-orbit { position: relative; width: 100%; max-width: 620px; justify-self: end; aspect-ratio: 1; }
 .bowl-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(27, 27, 27, 0.15); }
-.bowl-disc { position: absolute; inset: 6%; border-radius: 50%; overflow: hidden; }
+.bowl-disc { position: absolute; inset: 6%; border-radius: 50%; }
 .bowl-spin { position: absolute; inset: 0; border-radius: 50%; animation: satoSpin 60s linear infinite; }
 .bowl-dot { position: absolute; right: 4%; bottom: 10%; width: 16px; height: 16px; border-radius: 50%; background: var(--red); }
 .story-quote { padding-top: clamp(40px, 6vw, 80px); border-top: 1px solid rgba(27, 27, 27, 0.12); }
@@ -203,22 +208,22 @@ a:hover { color: var(--red); }
 }
 .bowl.no-anim { transition: none; }
 .bowl-face {
-  width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
-  border: clamp(8px, 1vw, 14px) solid var(--paper);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  width: 100%; height: 100%; border-radius: 50%;
   transition: transform 1s var(--ease-swing);
 }
 /* Spins on hover like the story bowl; pausing (not removing) the animation
    keeps the angle when the pointer leaves, so it never snaps back. */
 .bowl-spin-layer {
-  width: 100%; height: 100%; border-radius: 50%;
-  background: repeating-linear-gradient(135deg, #2a2a2a 0 10px, #232323 10px 20px);
-  display: flex; align-items: center; justify-content: center;
+  position: relative; width: 100%; height: 100%; border-radius: 50%;
   animation: satoSpin 20s linear infinite paused;
 }
 .bowl:hover .bowl-spin-layer { animation-play-state: running; }
 @media (prefers-reduced-motion: reduce) { .bowl-spin-layer { animation: none; } }
-.bowl-face span { font-family: var(--font-mono); font-size: 11px; color: var(--paper); opacity: 0.7; text-align: center; line-height: 1.6; }
+/* Bowl cut-outs have ~10% transparent margin; oversize them so the kraft rim meets the frame edge. */
+.bowl-photo-wrap { position: absolute; inset: -12%; pointer-events: none; }
+.bowl-photo-wrap img { object-fit: contain; }
+.bowl .bowl-photo-wrap img { filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.55)); }
+.bowl-orbit .bowl-photo-wrap img { filter: drop-shadow(0 18px 28px rgba(27, 27, 27, 0.22)); }
 .new-badge {
   position: absolute; top: 2%; right: 4%; width: 22%; aspect-ratio: 1; background: var(--red);
   clip-path: polygon(50% 0, 61% 13%, 79% 9%, 82% 27%, 98% 35%, 89% 50%, 98% 65%, 82% 73%, 79% 91%, 61% 87%, 50% 100%, 39% 87%, 21% 91%, 18% 73%, 2% 65%, 11% 50%, 2% 35%, 18% 27%, 21% 9%, 39% 13%);
@@ -275,7 +280,9 @@ a:hover { color: var(--red); }
 .menu .wrap { width: 100%; display: flex; flex-direction: column; gap: clamp(24px, 4vh, 44px); }
 .section-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px var(--gap); align-items: flex-end; }
 .menu .section-head .body { width: calc((100% - 3 * var(--gap)) / 4); min-width: min(100%, 260px); }
-.dish-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--gap); }
+/* Always 4 across or 2×2, never a 3 + 1 orphan. */
+.dish-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+@media (min-width: 1024px) { .dish-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .dish-card {
   position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden;
   color: var(--white);
@@ -286,13 +293,13 @@ a:hover { color: var(--red); }
 .dish-card .ph-label { font-size: 11px; color: var(--white); opacity: 0.75; }
 .dish-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(to top, rgba(27, 27, 27, 0.75), rgba(27, 27, 27, 0)); }
 .dish-meta { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(18px, 1.8vw, 26px); display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
-.dish-meta b { font-family: var(--font-display); font-size: clamp(18px, 1.5vw, 22px); font-weight: 500; line-height: 1.15; }
-.dish-meta span { font-family: var(--font-jp); font-size: clamp(14px, 1.2vw, 18px); letter-spacing: 0.08em; text-align: right; }
+.dish-meta b { flex: 1; min-width: 0; font-family: var(--font-display); font-size: clamp(18px, 1.5vw, 22px); font-weight: 500; line-height: 1.15; }
+.dish-meta span { flex: none; white-space: nowrap; font-family: var(--font-jp); font-size: clamp(14px, 1.2vw, 18px); letter-spacing: 0.08em; text-align: right; }
 
 /* Phones: a compact 2×2 grid instead of four full-width cards. */
 @media (max-width: 599px) {
   .menu { min-height: 0; }
-  .dish-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .dish-grid { gap: 12px; }
   .dish-card { border-radius: 14px; }
   .dish-card .ph-label { font-size: 9px; padding: 0 12px; text-align: center; }
   .dish-shade { height: 60%; }
@@ -305,11 +312,17 @@ a:hover { color: var(--red); }
 .signature { position: relative; background: var(--ink); }
 .signature-media { width: 100%; aspect-ratio: 16 / 9; }
 .signature-media .par-in { top: -14%; bottom: -14%; }
+@media (min-width: 1024px) {
+  /* Darken the bottom so the overlaid title and copy stay readable on the photo. */
+  .signature-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(27, 27, 27, 0.8) 0%, rgba(27, 27, 27, 0.3) 35%, rgba(27, 27, 27, 0) 60%), linear-gradient(to right, rgba(27, 27, 27, 0.55) 0%, rgba(27, 27, 27, 0) 50%); pointer-events: none; }
+  .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(27, 27, 27, 0.45) 0%, rgba(27, 27, 27, 0.15) 40%, rgba(27, 27, 27, 0) 60%); pointer-events: none; }
+}
+.signature h2 { max-width: 12ch; }
 .signature-copy {
   padding: clamp(28px, 5vw, 80px) var(--gutter);
   display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; color: var(--white);
 }
-.signature h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(48px, 8vw, 140px); line-height: 0.9; letter-spacing: -0.04em; }
+.signature h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(44px, 6vw, 112px); line-height: 0.9; letter-spacing: -0.04em; }
 .signature-side { max-width: 340px; }
 .signature-side p { margin: 0; font-size: 16px; line-height: 1.7; }
 .signature-side .pill { align-self: flex-start; }

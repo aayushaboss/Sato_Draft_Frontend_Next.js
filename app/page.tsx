@@ -4,13 +4,16 @@ import MotionController from "@/components/MotionController";
 import Nav from "@/components/Nav";
 import Placeholder from "@/components/Placeholder";
 import RamenCarousel from "@/components/RamenCarousel";
-import { dishCards, franchisePerks, instagramUrl, outlets, perks, reels } from "@/lib/content";
+import { dishCards, dishes, franchisePerks, instagramUrl, outlets, perks, reels } from "@/lib/content";
 
 const Chevron = ({ size, width = 2 }: { size: number; width?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={width} strokeLinecap="round" strokeLinejoin="round">
     <polyline points="9 6 15 12 9 18" />
   </svg>
 );
+
+// The Our Story bowl reuses a carousel photo.
+const storyBowl = dishes.find((d) => d.name === "Naruto Veg Ramen")!;
 
 export default function Home() {
   return (
@@ -20,7 +23,7 @@ export default function Home() {
 
       <header id="top" className="hero">
         <div className="hero-frame">
-          <Placeholder label="full-bleed · steaming bowl, low light" className="hero-media">
+          <Placeholder label="Bowl of SATO ramen with greens, noodles and chopsticks on a red table" src="/images/hero.webp" sizes="100vw" quality={90} priority className="hero-media">
             <div className="hero-jp">佐藤 · ラーメン</div>
           </Placeholder>
           <div className="overlay hero-copy">
@@ -58,10 +61,10 @@ export default function Home() {
             </div>
             <div className="bowl-orbit">
               <div data-r="" className="bowl-ring" />
-              <div data-par="" data-r="" className="bowl-disc">
+              <div data-r="" className="bowl-disc">
                 <div className="bowl-spin">
-                  <div data-par-in="" className="par-in light">
-                    <span className="ph-label">bowl · top-down, on wood</span>
+                  <div className="bowl-photo-wrap">
+                    <Image src={storyBowl.img} alt={storyBowl.alt} fill sizes="(min-width: 760px) 700px, 100vw" />
                   </div>
                 </div>
               </div>
@@ -101,7 +104,7 @@ export default function Home() {
           <div className="dish-grid">
             {dishCards.map((d) => (
               <a key={d.name} data-r="" href="#menu" className="dish-card">
-                <Placeholder label={d.img} background={d.pattern} style={{ background: d.bg }} />
+                <Placeholder label={d.alt} src={d.img} sizes="(min-width: 1024px) 25vw, 50vw" />
                 <div className="dish-shade" />
                 <div className="dish-meta">
                   <b>{d.name}</b>
@@ -114,14 +117,14 @@ export default function Home() {
       </section>
 
       <section className="signature">
-        <Placeholder label="full-bleed · X Ramen, close-up" className="signature-media" />
+        <Placeholder label="Cheesy volcano ramen lifted with chopsticks from a kraft bowl on a red table" src="/images/signature-cheesy-volcano-ramen.webp" sizes="100vw" className="signature-media" />
         <div className="overlay signature-copy">
           <div className="stack" style={{ gap: 16 }}>
             <span data-r="" className="eyebrow">NEW SIGNATURE</span>
-            <h2 data-r="">X Ramen</h2>
+            <h2 data-r="">Cheesy Volcano Ramen</h2>
           </div>
           <div data-r="" className="stack signature-side">
-            <p>Bold, mysterious and full of character. A bowl with a little SATO attitude.</p>
+            <p>Rich, cheesy and fiery. A bowl that erupts with flavour in every pull.</p>
             <a href="#location" className="pill">
               Order this bowl
             </a>

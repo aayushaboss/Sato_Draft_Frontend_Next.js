@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
 import { dishes } from "@/lib/content";
 
@@ -79,11 +80,9 @@ export default function RamenCarousel({ autoplay = true }: { autoplay?: boolean 
             <div key={d.name} className={`bowl${hide ? " no-anim" : ""}`} style={style} onClick={() => step(off)}>
               <div className="bowl-face" style={{ transform: `rotate(${raw * -60}deg)` }}>
                 <div className="bowl-spin-layer">
-                  <span>
-                    {d.name.toLowerCase()}
-                    <br />
-                    top-down
-                  </span>
+                  <div className="bowl-photo-wrap">
+                    <Image src={d.img} alt={d.alt} fill sizes="(min-width: 1024px) 600px, 80vw" priority={i === 0} />
+                  </div>
                 </div>
               </div>
               {d.isNew && (
