@@ -19,7 +19,7 @@ export default function JoinForm() {
         <button type="submit">{joined ? "You're in" : "Unlock the menu"}</button>
       </form>
       <span data-r="" className="join-note">
-        {joined ? "We'll send the secret menu the day Red Circle opens." : "Limited seats only."}
+        {joined ? "Awesome." : "Limited seats only."}
       </span>
     </>
   );
