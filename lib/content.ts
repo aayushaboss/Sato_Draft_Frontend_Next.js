@@ -48,7 +48,7 @@ export const directionsUrl = (o: Outlet) =>
   encodeURIComponent(`SATO Ramen Bowl, ${displayAddr(o)}`);
 
 // Only Vijay Char Rasta's street address is confirmed (District listing, Oct 2026); the rest await SATO.
-// Prahlad Nagar's photo is pending. Gota and Prahlad Nagar use the main number.
+// Gota and Prahlad Nagar use the main number.
 export const outlets: Outlet[] = [
   {
     name: "SATO Vijay Char Rasta",
@@ -82,7 +82,14 @@ export const outlets: Outlet[] = [
     img: "/outlets/gandhinagar.webp",
     alt: "Cosy corner at SATO Gandhinagar with manga shelves, an anime pirate flag and a low bench table",
   },
-  { name: "SATO Prahlad Nagar", addr: "[Street address], Ahmedabad", city: "Ahmedabad", phone: contact.phone },
+  {
+    name: "SATO Prahlad Nagar",
+    addr: "[Street address], Ahmedabad",
+    city: "Ahmedabad",
+    phone: contact.phone,
+    img: "/outlets/prahlad-nagar.webp",
+    alt: "SATO Prahlad Nagar dining room with red chairs, black-and-white tiled floor, manga ceiling and a ラーメン noren curtain",
+  },
 ];
 
 export const perks = [
