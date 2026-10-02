@@ -15,7 +15,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: auto; scrollbar-width: none; }
+/* Mobile browsers ignore body overflow-x alone; clip on both so nothing can make the page pan sideways. */
+html { scroll-behavior: auto; scrollbar-width: none; overflow-x: hidden; overflow-x: clip; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 body {
   margin: 0;
@@ -24,6 +25,7 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 a { color: var(--ink); text-decoration: none; }
 a:hover { color: var(--red); }
@@ -170,11 +172,13 @@ a:hover { color: var(--red); }
 }
 
 /* ---------- Story ---------- */
-.story { padding: clamp(40px, 7vw, 120px) var(--gutter); }
+.story { padding: clamp(40px, 7vw, 120px) var(--gutter); overflow-x: clip; }
 .story .wrap { display: flex; flex-direction: column; gap: clamp(40px, 6vw, 96px); }
 .story .split { gap: clamp(28px, 5vw, 120px); }
 .story-copy { max-width: 520px; }
 .bowl-orbit { position: relative; width: 100%; max-width: 620px; justify-self: end; aspect-ratio: 1; }
+/* Phones: the bowl photo is drawn 24% larger than its frame, so shrink the frame to keep it on screen. */
+@media (max-width: 759px) { .bowl-orbit { width: 80%; justify-self: center; } }
 .bowl-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(27, 27, 27, 0.15); }
 .bowl-disc { position: absolute; inset: 6%; border-radius: 50%; }
 .bowl-spin { position: absolute; inset: 0; border-radius: 50%; animation: satoSpin 60s linear infinite; }
