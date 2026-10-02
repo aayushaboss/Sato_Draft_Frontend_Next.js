@@ -4,7 +4,7 @@ import MotionController from "@/components/MotionController";
 import Nav from "@/components/Nav";
 import Placeholder from "@/components/Placeholder";
 import RamenCarousel from "@/components/RamenCarousel";
-import { contact, directionsUrl, dishCards, displayAddr, dishes, franchisePerks, instagramUrl, outlets, perks, reels } from "@/lib/content";
+import { contact, directionsUrl, dishCards, displayAddr, telHref, dishes, franchisePerks, instagramUrl, outlets, perks, reels } from "@/lib/content";
 
 const Chevron = ({ size, width = 2 }: { size: number; width?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={width} strokeLinecap="round" strokeLinejoin="round">
@@ -153,7 +153,9 @@ export default function Home() {
                       Directions
                       <Chevron size={12} width={2.4} />
                     </a>
-                    <a href={`tel:${contact.tel}`}>Call</a>
+                    <a href={telHref(o.phone)} aria-label={`Call ${o.name} on ${o.phone}`}>
+                      {o.phone}
+                    </a>
                   </div>
                 </div>
               </div>

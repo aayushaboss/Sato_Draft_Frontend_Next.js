@@ -30,7 +30,10 @@ export const contact = {
   tel: "+917600639478",
 };
 
-type Outlet = { name: string; addr: string; city: string; img?: string; alt?: string };
+type Outlet = { name: string; addr: string; city: string; phone: string; img?: string; alt?: string };
+
+/** tel: link for a display number like "+91 91046 25167". */
+export const telHref = (phone: string) => "tel:" + phone.replace(/[^+\d]/g, "");
 
 /** Card address: the street address once confirmed, otherwise just "Area, City". */
 export const displayAddr = (o: Outlet) => {
@@ -45,12 +48,13 @@ export const directionsUrl = (o: Outlet) =>
   encodeURIComponent(`SATO Ramen Bowl, ${displayAddr(o)}`);
 
 // Only Vijay Char Rasta's street address is confirmed (District listing, Oct 2026); the rest await SATO.
-// The fifth outlet's photo and name are pending.
+// Prahlad Nagar's photo is pending. Gota and Prahlad Nagar use the main number.
 export const outlets: Outlet[] = [
   {
     name: "SATO Vijay Char Rasta",
     addr: "Flat 4, Pavan Apartment, Vijay Cross Road, Opp. Central Bank, Navrangpura, Ahmedabad",
     city: "Ahmedabad",
+    phone: "+91 91046 25167",
     img: "/outlets/vijay-char-rasta.webp",
     alt: "Red-walled SATO Vijay Char Rasta with a bar counter, orange stools and a neon Sato Ramen sign",
   },
@@ -58,6 +62,7 @@ export const outlets: Outlet[] = [
     name: "SATO Gota",
     addr: "[Street address], Ahmedabad",
     city: "Ahmedabad",
+    phone: contact.phone,
     img: "/outlets/gota.webp",
     alt: "Glass-fronted SATO Gota with red booth seating, red chairs and a neon Sato Ramen sign",
   },
@@ -65,6 +70,7 @@ export const outlets: Outlet[] = [
     name: "SATO Naroda",
     addr: "[Street address], Ahmedabad",
     city: "Ahmedabad",
+    phone: "+91 95127 57400",
     img: "/outlets/naroda.webp",
     alt: "Bright SATO Naroda dining room with red chairs, framed art and a ラーメン banner",
   },
@@ -72,10 +78,11 @@ export const outlets: Outlet[] = [
     name: "SATO Gandhinagar",
     addr: "[Street address], Gandhinagar",
     city: "Gandhinagar",
+    phone: "+91 70693 22314",
     img: "/outlets/gandhinagar.webp",
     alt: "Cosy corner at SATO Gandhinagar with manga shelves, an anime pirate flag and a low bench table",
   },
-  { name: "SATO [Area 5]", addr: "[Street address], [City]", city: "Ahmedabad" },
+  { name: "SATO Prahlad Nagar", addr: "[Street address], Ahmedabad", city: "Ahmedabad", phone: contact.phone },
 ];
 
 export const perks = [
